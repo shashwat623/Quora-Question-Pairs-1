@@ -19,7 +19,7 @@ class Consumer(multiprocessing.Process):
 
 		self.tokenizer = StanfordTokenizer(options={"ptb3Escaping": True})
 		print '%s: Loading pickles...' % self.name
-		self.map_word_index = pickle.load(map_word_index_model)
+		self.map_word_index = pickle.loads(map_word_index_model)
 		print '%s: Done.' % self.name
 
 	def run(self):
